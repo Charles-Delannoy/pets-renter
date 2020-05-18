@@ -32,6 +32,8 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 
 group :development, :test do
   gem 'pry-byebug'
