@@ -1,0 +1,8 @@
+<%= simple_form_for [@pet] do |f| %>
+<%= f.input :name %>
+<%= f.input :description %>
+<%= f.input :birthdate %>
+<%= f.input :pet_type %>
+<%= f.input :race %>
+<%= f.submit class: "btn btn-primary" %>
+<% end %>
