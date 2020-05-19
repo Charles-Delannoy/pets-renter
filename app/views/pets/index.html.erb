@@ -4,7 +4,8 @@
   <% @pets.each do |pet| %>
   <li>
     <%= pet.name %> - <%= pet.pet_type %> - <%= pet.race %>
-    <%= cl_image_tag pet.photo.key %>
+    <%= cl_image_tag pet.photo.key, height: 400, width: 400, crop: :fill %>
+    <%= link_to "Delete this pet <i class='fa fa-trash destroy_dose'></i>".html_safe, pet_path(pet),method: :delete, data: { confirm: "Are you sure?" } %>
   </li>
   <% end %>
 </ul>
