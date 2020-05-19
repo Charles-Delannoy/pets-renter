@@ -43,3 +43,36 @@
   justify-content: space-around;
   padding-bottom: 10px;
 }
+
+
+.pet-show-card {
+  display: flex;
+  border-radius: 10px;
+  background-color: #f7e6e6;
+  height: 70vh;
+  box-shadow: -4px 13px 20px -21px rgba(0,0,0,0.75);
+  .pet-show-img {
+    border-radius: 10px 0px 0px 10px;
+    height: 70vh;
+  }
+  .pet-detail {
+    border-radius: 0px 10px 10px 0px;
+    width: 100%;
+    position: relative;
+    h1 {
+      text-align: center;
+      border-bottom: 2px solid white;
+      margin: 20px;
+    }
+    .pet-show-description {
+      padding: 20px;
+    }
+    .pet-detail-footer {
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      height: 50px;
+      width: 100%;
+    }
+  }
+}
