@@ -13,6 +13,10 @@ class PetsController < ApplicationController
     @pet.save ? (redirect_to pets_path) : (render :new)
   end
 
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+
   private
 
   def pet_params
