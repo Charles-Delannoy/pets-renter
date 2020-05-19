@@ -17,10 +17,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <div class="custom-container">
+    <div class="<% unless current_page?('/') %> custom-container <% end %>">
       <%= yield %>
     </div>
 
-    <%= render 'shared/footer' %>
+    <% unless current_page?('/')%>
+      <%= render "shared/footer" %>
+    <% end %>
   </body>
 </html>
