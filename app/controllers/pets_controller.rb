@@ -23,7 +23,7 @@ class PetsController < ApplicationController
 
   def update
     @pet.update(pet_params)
-    redirect_to pets_path
+    redirect_to pet_path(@pet)
   end
 
   def destroy

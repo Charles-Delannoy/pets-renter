@@ -14,8 +14,8 @@
       <p><%= @pet.description %></p>
     </div>
     <div class="pet-detail-footer">
-      <%= link_to "Edit", "#", class: "my-btn btn-pet-show" %>
-      <%= link_to "Delete", "#", class: "my-btn btn-pet-show" %>
+      <%= link_to "Edit", edit_pet_path(@pet), class: "my-btn btn-pet-show" %>
+      <%= link_to "Delete", pet_path(@pet), method: :delete, data: { confirm: "Are you sure?" }, class: "my-btn btn-pet-show" %>
     </div>
   </div>
 </div>
