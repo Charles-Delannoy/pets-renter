@@ -10,6 +10,11 @@
   justify-content: flex-start;
   flex-direction: row !important;
   object-fit: cover;
+  img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
 }
 
 .card-description {
@@ -53,7 +58,9 @@
   box-shadow: -4px 13px 20px -21px rgba(0,0,0,0.75);
   .pet-show-img {
     border-radius: 10px 0px 0px 10px;
-    height: 70vh;
+    height: 100%;
+    width: 30vw;
+    object-fit: cover;
   }
   .pet-detail {
     border-radius: 0px 10px 10px 0px;
