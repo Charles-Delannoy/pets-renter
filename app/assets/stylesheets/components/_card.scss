@@ -1,7 +1,47 @@
-.card-pet-name {
+.card-pet {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 400px;
+  height: 200px;
+  background-size: cover !important;
+  background-position: center;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row !important;
+  object-fit: cover;
+}
+
+.card-description {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  text-align: left;
+  color: black;
+  position: relative;
+  flex-grow: 1;
+}
+
+.card-description-details {
+  padding: 5px;
+}
+
+.card-description h2 {
+  font-size: 24px;
+  color: #F4B8B7;
   padding: .55em 0 .3em;
   border-bottom: 1px solid #d8d8d8;
+  text-align: center;
+}
+
+
+.card-pet-foot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
 }
 
 
