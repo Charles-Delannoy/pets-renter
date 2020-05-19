@@ -1,28 +1,27 @@
 <h1>Pets</h1>
 
-<ul>
+<div class="card-container">
   <% @pets.each do |pet| %>
-  <li>
-    <%= pet.name %> - <%= pet.pet_type %> - <%= pet.race %>
-    <%= cl_image_tag pet.photo.key %>
-  </li>
-  <% end %>
-</ul>
-
-<div class="card-pet">
-  <div class="card-row">
-    <h2 class="card-pet-name"> Pet name </h2>
-  </div>
-  <div class="card-pet-info">
-    <ul class="pet-details">
-      <li class="pet-detail-type"> Type </li>
-      <li class="pet-detail-race"> Race </li>
-      <li class="pet-detail-age"> Age </li>
-    </ul>
-    <p class="pet-description"> Lorem ipsum </p>
-    <footer class="content-footer">
-      <%= link_to "Book this pet", "#", class: "button-booking" %>
-      <%= link_to "View pet details", "#", class: "button-details" %>
-    </footer>
-  </div>
+    <div class="card-pet">
+      <%= cl_image_tag pet.photo.key %>
+      <div class="card-description">
+        <h2><%= pet.name %></h2>
+        <div class="card-description-details">
+          <p><%= pet.pet_type %></p>
+          <p><%= pet.race %></p>
+        </div>
+        <div class="card-pet-foot">
+          <%= link_to "Details", pet_path(pet) %>
+          <%= link_to "Book", pet_path(pet) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
 </div>
+
+
+
+
+
+
+
