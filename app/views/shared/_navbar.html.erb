@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://cdn5.vectorstock.com/i/1000x1000/78/24/veterinary-logo-for-pet-shop-vector-26997824.jpg" %>
+    <%= image_tag 'logo.png' %>
   <% end %>
 
   <% if user_signed_in? %>
@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
@@ -30,6 +30,6 @@
       </ul>
     </div>
     <% else %>
-       <%= link_to "Sign up", new_user_session_path, class: "btn-sign-in-navbar" %>
+       <%= link_to "Sign in", new_user_session_path, class: "btn-sign-in-navbar" %>
     <% end %>
 </div>
