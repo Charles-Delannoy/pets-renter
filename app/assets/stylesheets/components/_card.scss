@@ -1,8 +1,11 @@
+// CARD FOR INDEX PAGE
+
 .card-pet {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 400px;
   height: 200px;
+  margin: 10px;
   background-size: cover !important;
   background-position: center;
   display: flex;
@@ -49,6 +52,7 @@
   padding-bottom: 10px;
 }
 
+// CARD FOR SHOW PAGE
 
 .pet-show-card {
   display: flex;
