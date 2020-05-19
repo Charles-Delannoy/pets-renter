@@ -1,0 +1,21 @@
+
+<div class="pet-show-card">
+  <div class="pet-image">
+    <% if @pet.photo.attached? %>
+    <%= cl_image_tag @pet.photo.key, class: "pet-show-img"%>
+    <% else %>
+    <%= cl_image_tag @pet.photo.key, class: "pet-show-img" %>
+    <% end %>
+  </div>
+  <div class="pet-detail">
+    <h1><%= @pet.name.capitalize %></h1>
+    <div class="pet-show-description">
+      <h3>Le <%= @pet.pet_type %> <%= @pet.race %></h3>
+      <p><%= @pet.description %></p>
+    </div>
+    <div class="pet-detail-footer">
+      <%= link_to "Edit", "#", class: "my-btn btn-pet-show" %>
+      <%= link_to "Delete", "#", class: "my-btn btn-pet-show" %>
+    </div>
+  </div>
+</div>

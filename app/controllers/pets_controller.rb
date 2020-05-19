@@ -1,8 +1,11 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:edit, :update, :destroy]
+  before_action :set_pet, only: [:edit, :show, :update, :destroy]
 
   def index
     @pets = Pet.all
+  end
+
+  def show
   end
 
   def new
