@@ -1,8 +1,8 @@
 <%= simple_form_for [@pet] do |f| %>
 <%= f.input :name %>
 <%= f.input :description %>
+<%= f.input :birthdate,  as: :date, start_year: Date.today.year - 20, end_year: Date.today.year %>
 <%= f.input :address %>
-<%= f.input :birthdate %>
 <%= f.input :pet_type %>
 <%= f.input :race %>
 <%= f.input :photo, as: :file %>

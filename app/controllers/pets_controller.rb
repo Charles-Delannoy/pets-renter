@@ -2,24 +2,29 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_pet, only: [:edit, :show, :update, :destroy]
 
+
   def index
-    @pets = Pet.all
+    @pets = policy_scope(Pet)
   end
 
   def show
+    authorize @pet
   end
 
   def new
     @pet = Pet.new
+    authorize @pet
   end
 
   def create
     @pet = Pet.new(pet_params)
+    authorize @pet
     @pet.user = current_user
     @pet.save ? (redirect_to pets_path) : (render :new)
   end
 
   def edit
+    authorize @pet
   end
 
   def update
@@ -28,6 +33,7 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    authorize @pet
     @pet.destroy
     redirect_to pets_path
   end
