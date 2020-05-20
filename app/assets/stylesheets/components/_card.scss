@@ -91,7 +91,26 @@
 // CARD FOR LANDING PAGE
 
 .home-card {
-  max-width : 66%;
+  // max-width : 80%;
   max-height: 600px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  border: 1px solid rgb(230,230,230);
+  border-radius: 4px;
+  margin-top: 30px;
+  .home-card-img {
+    height: 100%;
+    width: 300px;
+    object-fit: cover;
+  }
+}
 
+.card-title {
+  text-align: center;
+  color: $btn-color;
+  margin-top: 2rem;
+}
+
+.card-text {
+  color: $gray;
+  padding: 50px;
 }
