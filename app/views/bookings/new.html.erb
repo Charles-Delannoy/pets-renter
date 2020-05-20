@@ -1,0 +1,7 @@
+<h1>booking</h1>
+<%= simple_form_for [@pet, @booking] do |f| %>
+<%= f.input :start_date, as: :date, start_year: Date.today.year %>
+<%= f.input :end_date, as: :date, start_year: Date.today.year %>
+<%= f.submit class: "btn btn-primary" %>
+<% end %>
+
