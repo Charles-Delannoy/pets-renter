@@ -30,7 +30,7 @@ class PetsController < ApplicationController
   def update
     authorize @pet
     @pet.update(pet_params)
-    redirect_to pet_path(@pet)
+    @pet.save ? (redirect_to pet_path(@pet)) : (render :new)
   end
 
   def destroy
