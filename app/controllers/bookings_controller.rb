@@ -8,10 +8,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    authorize @booking
     @pet = Pet.find(params[:pet_id])
     @booking.user = current_user
     @booking.pet = @pet
+    authorize @booking
     @booking.accepted = "pending"
     @booking.save ? (redirect_to pet_path(@pet)) : (render :new)
   end

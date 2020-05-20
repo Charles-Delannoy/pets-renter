@@ -28,6 +28,7 @@ class PetsController < ApplicationController
   end
 
   def update
+    authorize @pet
     @pet.update(pet_params)
     redirect_to pet_path(@pet)
   end
