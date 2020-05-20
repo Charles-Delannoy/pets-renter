@@ -4,12 +4,20 @@ class PetPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   def create?
     true
   end
 
   def new?
     create?
+  end
+
+  def destroy?
+    record.user == user
   end
 
   class Scope < Scope

@@ -8,6 +8,7 @@ class PetsController < ApplicationController
   end
 
   def show
+    authorize @pet
   end
 
   def new
@@ -31,6 +32,7 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    authorize @pet
     @pet.destroy
     redirect_to pets_path
   end
