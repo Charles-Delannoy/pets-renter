@@ -99,7 +99,7 @@
   margin-top: 30px;
   .home-card-img {
     height: 100%;
-    width: 300px;
+    width: 400px;
     object-fit: cover;
   }
 }
@@ -114,3 +114,52 @@
   color: $gray;
   padding: 50px;
 }
+
+// CARD FOR BOOKING RESERVATION
+
+.card-booking {
+    max-height: 800px;
+    width: 300px;
+    p {
+      margin: 5px 0;
+    }
+    h5 {
+      margin: 5px 0;
+    }
+  .card-booking-img {
+    height: 250px;
+    width: 300px;
+    background-size: cover;
+    overflow: hidden;
+    object-fit: cover;
+  }
+}
+
+.card-title-booking {
+  text-align: center;
+  border-bottom: 0.1px solid #d8d8d8;
+  padding: 2px;
+}
+
+.card-text-booking {
+  padding: 1px;
+  border-bottom: 0.5px solid #d8d8d8;
+  text-align: center;
+}
+
+.card-details-booking {
+  text-align: center;
+}
+
+.card-text-description {
+  border-bottom: 0.5px solid #d8d8d8;
+}
+
+.booking-button .my-btn .btn-card {
+  text-align: center;
+  position: relative;
+  margin: auto;
+  display: block;
+}
+
+

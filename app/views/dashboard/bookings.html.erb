@@ -1,0 +1,30 @@
+<h1>My bookings</h1>
+
+<div class="card-booking">
+  <% @bookings.each do |booking| %>
+  <div class="card-booking-img">
+   <% if booking.pet.photo.attached? %>
+        <%= cl_image_tag booking.pet.photo.key %>
+      <% else %>
+        <%= image_tag 'd-pets.png' %>
+      <% end %>
+  </div>
+    <div class="card-title-booking">
+      <h5><strong><%= booking.pet.name %></strong></h5>
+    </div>
+      <div class="card-text-booking">
+        <p>You have made a reservation for a <%= booking.pet.pet_type %>, more precisely a <%= booking.pet.race %></p>
+      </div>
+      <div class="card-details-booking">
+        <p>From: <%= booking.start_date %> To: <%= booking.end_date %></p>
+        <p> Status: <%= booking.accepted.capitalize %></p>
+        <div class="booking-button">
+          <%= link_to "Cancel booking", '#', class: "my-btn btn-card" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
