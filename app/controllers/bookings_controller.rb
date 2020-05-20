@@ -16,6 +16,11 @@ class BookingsController < ApplicationController
     @booking.save ? (redirect_to pet_path(@pet)) : (render :new)
   end
 
+  def index
+    @bookings = Booking.all
+    policy_scope(@bookings)
+  end
+
   private
 
   def booking_params
