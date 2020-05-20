@@ -4,7 +4,7 @@
     <% if @pet.photo.attached? %>
     <%= cl_image_tag @pet.photo.key, class: "pet-show-img"%>
     <% else %>
-    <%= cl_image_tag @pet.photo.key, class: "pet-show-img" %>
+    <%= image_tag 'd-pets.png', class: "pet-show-img" %>
     <% end %>
   </div>
   <div class="pet-detail">

@@ -3,7 +3,11 @@
 <div class="card-container">
   <% @pets.each do |pet| %>
     <div class="card-pet">
-      <%= cl_image_tag pet.photo.key %>
+      <% if pet.photo.attached? %>
+        <%= cl_image_tag pet.photo.key %>
+      <% else %>
+        <%= image_tag 'd-pets.png' %>
+      <% end %>
       <div class="card-description">
         <h2><%= pet.name %></h2>
         <div class="card-description-details">
