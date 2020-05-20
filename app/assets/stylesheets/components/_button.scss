@@ -19,3 +19,13 @@
     background-color: #b5631a;
   }
 }
+
+.btn-card {
+  color: #F4B8B7;
+  border: 2px solid #F4B8B7;
+  border-radius: 8px;
+  padding: 8px 18px;
+  &:hover {
+    color: #582630
+  }
+}
