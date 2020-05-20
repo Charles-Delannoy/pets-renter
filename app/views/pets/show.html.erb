@@ -21,6 +21,8 @@
         <%= link_to "Delete", pet_path(@pet), method: :delete, data: { confirm: "Are you sure?" }, class: "my-btn btn-pet-show" %>
       <% end %>
     </div>
+    <% unless current_user == @pet.user %>
     <%= link_to "Make a booking", new_pet_booking_path(@pet), class: "my-btn btn-pet-show" %>
+    <% end %>
   </div>
 </div>

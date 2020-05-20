@@ -12,10 +12,6 @@ class PetPolicy < ApplicationPolicy
     true
   end
 
-  def new?
-    create?
-  end
-
   def edit?
     record.user == user
   end
