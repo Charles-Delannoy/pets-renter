@@ -24,6 +24,7 @@ class PetsController < ApplicationController
   end
 
   def edit
+    authorize @pet
   end
 
   def update

@@ -14,7 +14,9 @@
       <p><%= @pet.description %></p>
     </div>
     <div class="pet-detail-footer">
+      <% if policy(@pet).edit? %>
         <%= link_to "Edit", edit_pet_path(@pet), class: "my-btn btn-pet-show" %>
+      <% end %>
       <% if policy(@pet).destroy? %>
         <%= link_to "Delete", pet_path(@pet), method: :delete, data: { confirm: "Are you sure?" }, class: "my-btn btn-pet-show" %>
       <% end %>
