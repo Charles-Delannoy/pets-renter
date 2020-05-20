@@ -10,7 +10,8 @@ class PetsController < ApplicationController
     @markers = @petsgeocoded.map do |pet|
       {
         lat: pet.latitude,
-        lng: pet.longitude
+        lng: pet.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { pet: pet })
       }
     end
   end
