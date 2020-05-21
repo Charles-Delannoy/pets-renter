@@ -35,6 +35,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'geocoder'
+gem "algoliasearch-rails"
 
 group :development, :test do
   gem 'pry-byebug'
