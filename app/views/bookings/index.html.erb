@@ -1,0 +1,69 @@
+<h1>My Bookings</h1>
+
+<div class="cards-container d-flex">
+  <p><%= "No booking yet" if @bookings.empty? %></p>
+  <% @bookings.each do |booking| %>
+  <div class="card-booking">
+  <div class="card-booking-img">
+   <% if booking.pet.photo.attached? %>
+        <%= cl_image_tag booking.pet.photo.key %>
+      <% else %>
+        <%= image_tag 'd-pets.png' %>
+      <% end %>
+  </div>
+    <div class="card-title-booking">
+      <h5><strong><%= booking.pet.name %></strong></h5>
+    </div>
+      <div class="card-text-booking">
+        <p>You have made a reservation for a <%= booking.pet.pet_type %>, more precisely a <%= booking.pet.race %></p>
+      </div>
+      <div class="card-details-booking">
+        <p>From: <%= booking.start_date %> To: <%= booking.end_date %></p>
+        <p> Status: <%= booking.accepted.capitalize %></p>
+        <div class="booking-button">
+          <%= link_to "Cancel booking", pet_booking_path(booking.pet, booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }, class: "my-btn btn-card" %>
+        </div>
+      </div>
+    </div>
+      <% end %>
+</div>
+
+<h1>My booked pets</h1>
+
+<div class="cards-container d-flex">
+  <p><%= "No pets booked yet" if @booked.empty? %></p>
+  <% @booked.each do |booking| %>
+  <div class="card-booking">
+  <div class="card-booking-img">
+   <% if booking.pet.photo.attached? %>
+        <%= cl_image_tag booking.pet.photo.key %>
+      <% else %>
+        <%= image_tag 'd-pets.png' %>
+      <% end %>
+  </div>
+    <div class="card-title-booking">
+      <h5><strong><%= booking.pet.name %></strong></h5>
+    </div>
+      <div class="card-text-booking">
+        <p>A reservation has been made for your <%= booking.pet.pet_type %>, the <%= booking.pet.race %></p>
+      </div>
+      <div class="card-details-booking">
+        <p>From: <%= booking.start_date %> To: <%= booking.end_date %></p>
+        <p> Status: <%= booking.accepted.capitalize %></p>
+        <div class="booking-validation-form">
+          <%= simple_form_for [booking] do |f| %>
+          <%= f.hidden_field :accepted, value: "accepted" %>
+          <%= f.hidden_field :id, value: booking.id %>
+          <%= f.submit 'Accept', class: "my-btn btn-card booking-validation-btn"%>
+          <% end %>
+
+          <%= simple_form_for [booking] do |f| %>
+          <%= f.hidden_field :accepted, value: "refused" %>
+          <%= f.hidden_field :id, value: booking.id %>
+          <%= f.submit 'Refuse', class: "my-btn btn-card booking-validation-btn"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+      <% end %>
+</div>

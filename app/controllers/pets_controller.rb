@@ -4,15 +4,20 @@ class PetsController < ApplicationController
 
 
   def index
-    @pets = policy_scope(Pet)
-    @petsgeocoded = policy_scope(Pet).geocoded
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR pet_type ILIKE :query OR address ILIKE :query"
+      @pets = policy_scope(Pet).where(sql_query, query: "%#{params[:query]}%").geocoded
+    else
+      @pets = policy_scope(Pet).geocoded
+    end
 
-    @markers = @petsgeocoded.map do |pet|
+    @markers = @pets.map do |pet|
       {
         lat: pet.latitude,
         lng: pet.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { pet: pet })
       }
+
     end
   end
 
@@ -56,6 +61,6 @@ class PetsController < ApplicationController
 
 
   def pet_params
-    params.require(:pet).permit(:name, :description, :birthdate, :pet_type, :race, :photo, :address)
+    params.require(:pet).permit(:name, :description, :birthdate, :pet_type, :race, :photo, :address, :price)
   end
 end
