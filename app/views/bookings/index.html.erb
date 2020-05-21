@@ -18,7 +18,8 @@
         <p>You have made a reservation for a <%= booking.pet.pet_type %>, more precisely a <%= booking.pet.race %></p>
       </div>
       <div class="card-details-booking">
-        <p>From: <%= booking.start_date %> To: <%= booking.end_date %></p>
+        <p>From: <%= booking.start_date %> To: <%= booking.end_date %> - <%= booking.days %> days</p>
+        <p><strong><%= booking.price %>$</strong></p>
         <p> Status: <%= booking.accepted.capitalize %></p>
         <div class="booking-button">
           <%= link_to "Cancel booking", pet_booking_path(booking.pet, booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }, class: "my-btn btn-card" %>
@@ -48,7 +49,8 @@
         <p>A reservation has been made for your <%= booking.pet.pet_type %>, the <%= booking.pet.race %></p>
       </div>
       <div class="card-details-booking">
-        <p>From: <%= booking.start_date %> To: <%= booking.end_date %></p>
+        <p>From: <%= booking.start_date %> To: <%= booking.end_date %> - <%= booking.days %> days</p>
+        <p><strong><%= booking.price %>$</strong></p>
         <p> Status: <%= booking.accepted.capitalize %></p>
         <div class="booking-validation-form">
           <%= simple_form_for [booking] do |f| %>

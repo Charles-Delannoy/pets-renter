@@ -1,8 +1,10 @@
+require 'date'
+
 class BookingsController < ApplicationController
 
   def index
-    @bookings = current_user.bookings
-    @booked = Booking.joins(:pet).where(pets: {user: current_user})
+    @bookings = current_user.bookings.order(created_at: :desc)
+    @booked = Booking.joins(:pet).where(pets: {user: current_user}).order(created_at: :desc)
     # @booked = Booking.where(pets: {user: current_user})
     policy_scope(@bookings)
   end
