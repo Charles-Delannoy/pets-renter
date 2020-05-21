@@ -12,6 +12,10 @@ class BookingPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def update?
+    record.pet.user == user
+  end
+
   class Scope < Scope
     def resolve
       scope.all
