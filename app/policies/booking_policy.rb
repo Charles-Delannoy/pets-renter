@@ -8,6 +8,10 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    booking.user != user
+  end
+
   class Scope < Scope
     def resolve
       scope.all

@@ -126,12 +126,18 @@
     h5 {
       margin: 5px 0;
     }
+    padding: 10px;
+    margin: 0px 20px 20px 20px;
   .card-booking-img {
     height: 250px;
     width: 300px;
     background-size: cover;
     overflow: hidden;
     object-fit: cover;
+    object-position: 50% 50%;
+      img {
+      max-width: 300px;
+    }
   }
 }
 
