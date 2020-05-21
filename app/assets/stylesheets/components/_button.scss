@@ -11,6 +11,9 @@
   color: white;
   border: 2px solid white;
   border-radius: 12px;
+  &:hover{
+    color: #582630;
+  }
 }
 
 .btn-pet-show {
@@ -32,11 +35,11 @@
   }
 }
 
-.booking-button {
-  width: 200px;
-  text-align: center;
-  margin: auto;
-}
+// .booking-button {
+//   width: 200px;
+//   text-align: center;
+//   margin: auto;
+// }
 
 .btn-home-page {
   color: white;
@@ -50,9 +53,18 @@
   }
 }
 
-.btn-form {
+.btn-submit-pet {
   color: white;
   background-color: #F4B8B7;
   border-radius: 12px;
   border: 1px solid white;
+  &:hover{
+    color: #582630;
+  }
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
