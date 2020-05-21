@@ -12,7 +12,7 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-  <body>
+  <body <% unless current_page?('/pets') %>data-no-turbolink="true" <% end %>>
 
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>

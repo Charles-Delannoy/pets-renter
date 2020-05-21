@@ -1,3 +1,12 @@
+<%= form_tag pets_path, class: "search-bar", method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search by name OR type (chien, chat, etc.)"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary", data: {turbolinks: "false"} %>
+<% end %>
+
 <h1>Pets</h1>
 
 <div class="card-container">
