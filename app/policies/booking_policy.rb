@@ -4,10 +4,6 @@ class BookingPolicy < ApplicationPolicy
     record.pet.user != user
   end
 
-  def bookings?
-    true
-  end
-
   def destroy?
     record.user == user
   end
