@@ -1,6 +1,7 @@
 <h1>My Bookings</h1>
 
 <div class="cards-container d-flex">
+  <p><%= "No booking yet" if @bookings.empty? %></p>
   <% @bookings.each do |booking| %>
   <div class="card-booking">
   <div class="card-booking-img">
@@ -30,6 +31,7 @@
 <h1>My booked pets</h1>
 
 <div class="cards-container d-flex">
+  <p><%= "No pets booked yet" if @booked.empty? %></p>
   <% @booked.each do |booking| %>
   <div class="card-booking">
   <div class="card-booking-img">
