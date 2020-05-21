@@ -14,3 +14,8 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+.section-title {
+    border-bottom: 0.1px solid #d8d8d8;
+    width: 100%;
+    margin-bottom: 15px;
+}
