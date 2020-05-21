@@ -8,8 +8,10 @@
 }
 
 .map-container {
-  height: 300px;
-  width: 600px;
+  height: 100vh;
+  margin-top: 10px;
+  position: sticky;
+  top: 0;
 }
 
 #map {

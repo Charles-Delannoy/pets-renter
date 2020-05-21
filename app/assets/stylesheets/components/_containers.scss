@@ -14,5 +14,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
+  margin: 0 auto;
+}
+
+// INDEX PETS
+
+.wrapper {
+  display: flex;
+}
+
+.row-left {
+  width: 70%;
+}
+
+.row-right {
+  width: 30%;
 }
