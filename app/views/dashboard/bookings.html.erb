@@ -1,7 +1,8 @@
 <h1>My bookings</h1>
 
-<div class="card-booking">
+<div class="cards-container d-flex">
   <% @bookings.each do |booking| %>
+  <div class="card-booking">
   <div class="card-booking-img">
    <% if booking.pet.photo.attached? %>
         <%= cl_image_tag booking.pet.photo.key %>
@@ -19,12 +20,12 @@
         <p>From: <%= booking.start_date %> To: <%= booking.end_date %></p>
         <p> Status: <%= booking.accepted.capitalize %></p>
         <div class="booking-button">
-          <%= link_to "Cancel booking", '#', class: "my-btn btn-card" %>
+          <%= link_to "Cancel booking", pet_booking_path(booking.pet, booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }, class: "my-btn btn-card" %>
         </div>
-        <% end %>
       </div>
     </div>
-  </div>
+      <% end %>
 </div>
+
 
 
