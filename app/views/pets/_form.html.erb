@@ -1,7 +1,7 @@
 <%= simple_form_for [@pet] do |f| %>
 <%= f.input :name %>
 <%= f.input :description %>
-<%= f.input :birthdate,  as: :date, start_year: Date.today.year - 20, end_year: Date.today.year %>
+<%= f.input :birthdate,  as: :string, start_year: Date.today.year - 20, end_year: Date.today.year, input_html: {class: "datepicker"} %>
 <%= f.input :address %>
 <%= f.input :pet_type %>
 <%= f.input :race %>

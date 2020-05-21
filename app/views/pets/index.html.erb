@@ -17,7 +17,7 @@
         <div class="card-pet-foot">
           <%= link_to "Details", pet_path(pet), class: "my-btn btn-card" %>
           <% unless current_user == pet.user %>
-          <%= link_to "Book", new_pet_booking_path(pet), class: "my-btn btn-card" %>
+          <%= link_to "Book", new_pet_booking_path(pet), class: "my-btn btn-card", data: {turbolinks: "false"} %>
           <% end %>
         </div>
       </div>
