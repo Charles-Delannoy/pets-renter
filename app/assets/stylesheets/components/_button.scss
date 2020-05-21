@@ -43,9 +43,15 @@
   background-color: #F4B8B7;
   border: 1px solid white;
   border-radius: 4px;
-  padding: 8px 24px;
+  padding: 10px 24px;
   &:hover {
     color: #582630;
     text-decoration:none;
   }
+}
+
+.btn-form {
+  color: white;
+  background-color: #F4B8B7;
+  border-radius: 12px;
 }
