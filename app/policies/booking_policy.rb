@@ -9,7 +9,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    booking.user != user
+    record.user == user
   end
 
   class Scope < Scope
