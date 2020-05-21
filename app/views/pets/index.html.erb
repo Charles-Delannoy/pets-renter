@@ -8,38 +8,43 @@
 <% end %>
 
 <div class="section-title">
-<h1>Pets</h1>
+  <h1>Pets</h1>
 </div>
 
-<div class="card-container">
-  <% @pets.each do |pet| %>
-    <div class="card-pet">
-      <% if pet.photo.attached? %>
-        <%= cl_image_tag pet.photo.key %>
-      <% else %>
-        <%= image_tag 'd-pets.png' %>
-      <% end %>
-      <div class="card-description">
-        <h2><%= pet.name %></h2>
-        <div class="card-description-details">
-          <p><%= pet.pet_type %></p>
-          <p><%= pet.race %></p>
-          <strong><p><%= pet.price %> $/day </p></strong>
-        </div>
-        <div class="card-pet-foot">
-          <%= link_to "Details", pet_path(pet), class: "my-btn btn-card" %>
-          <% unless current_user == pet.user %>
-          <%= link_to "Book", new_pet_booking_path(pet), class: "my-btn btn-card", data: {turbolinks: "false"} %>
-          <% end %>
+  <div class="wrapper">
+    <div class="row-left">
+      <div class="card-container">
+        <% @pets.each do |pet| %>
+          <div class="card-pet">
+            <% if pet.photo.attached? %>
+              <%= cl_image_tag pet.photo.key %>
+            <% else %>
+              <%= image_tag 'd-pets.png' %>
+            <% end %>
+            <div class="card-description">
+              <h2><%= pet.name %></h2>
+              <div class="card-description-details">
+                <p><%= pet.pet_type %></p>
+                <p><%= pet.race %></p>
+                <strong><p><%= pet.price %> $/day </p></strong>
+              </div>
+              <div class="card-pet-foot">
+                <%= link_to "Details", pet_path(pet), class: "my-btn btn-card" %>
+                <% unless current_user == pet.user %>
+                <%= link_to "Book", new_pet_booking_path(pet), class: "my-btn btn-card", data: {turbolinks: "false"} %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row-right">
+      <div class="map-container">
+        <div id="map"
+             data-markers="<%= @markers.to_json %>"
+             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
     </div>
-  <% end %>
-</div>
-
-<div class="map-container">
-  <div id="map"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-</div>
