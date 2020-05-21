@@ -22,7 +22,7 @@
       <% end %>
     </div>
     <% unless current_user == @pet.user %>
-    <%= link_to "Make a booking", new_pet_booking_path(@pet), class: "my-btn btn-pet-show" %>
+    <%= link_to "Make a booking", new_pet_booking_path(@pet), class: "my-btn btn-pet-show", data: {turbolinks: "false"} %>
     <% end %>
   </div>
 </div>
