@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroy bookings"
-Booking.destroy_all if Rails.env.development?
+Booking.destroy_all
 puts "Destroy pets"
-Pet.destroy_all if Rails.env.development?
+Pet.destroy_all
 puts "Destroy users"
-User.destroy_all if Rails.env.development?
+User.destroy_all
 
 base_url = "https://source.unsplash.com/400x300/?"
 hm = ["men", "woman"]
