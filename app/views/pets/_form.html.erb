@@ -1,4 +1,4 @@
-<%= simple_form_for [@pet] do |f| %>
+<%= simple_form_for [@pet], html: { class: "form-class"} do |f| %>
 <%= f.input :name %>
 <%= f.input :description %>
 <%= f.input :birthdate,  as: :string, start_year: Date.today.year - 20, end_year: Date.today.year, input_html: {class: "datepicker"} %>
