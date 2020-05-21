@@ -5,6 +5,7 @@
 <%= f.input :address %>
 <%= f.input :pet_type %>
 <%= f.input :race %>
+<%= f.input :price, label: "Price per day", input_html: {min: 0, step: 5} %>
 <%= f.input :photo, as: :file %>
 <%= f.submit class: "btn btn-primary" %>
 <% end %>

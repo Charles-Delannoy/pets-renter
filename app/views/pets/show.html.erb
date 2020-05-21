@@ -12,6 +12,7 @@
     <div class="pet-show-description">
       <h3>Le <%= @pet.pet_type %> <%= @pet.race %></h3>
       <p><%= @pet.description %></p>
+      <p> <%= @pet.price %> $/day </p>
     </div>
     <div class="pet-detail-footer">
       <% if policy(@pet).edit? %>
