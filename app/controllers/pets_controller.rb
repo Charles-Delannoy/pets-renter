@@ -5,6 +5,15 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet)
+    @petsgeocoded = policy_scope(Pet).geocoded
+
+    @markers = @petsgeocoded.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { pet: pet })
+      }
+    end
   end
 
   def show
