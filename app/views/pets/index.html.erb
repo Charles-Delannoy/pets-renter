@@ -25,8 +25,8 @@
               <h2><%= pet.name %></h2>
               <div class="card-description-details">
                 <p><%= pet.pet_type %></p>
-                <p><%= pet.race %></p>
-                <strong><p class="price-card"><%= pet.price %> €/jour </p></strong>
+                <p><%= pet.race.capitalize %></p>
+                <strong><p class="price-card"><i class="fas fa-paw"></i><%= pet.price %> €/jour </p></strong>
               </div>
               <div class="card-pet-foot">
                 <%= link_to "Details", pet_path(pet), class: "my-btn btn-card" %>

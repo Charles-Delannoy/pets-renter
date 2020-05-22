@@ -39,6 +39,9 @@
     p {
       margin: 4px;
     }
+    i {
+      margin-right: 5px;
+    }
 }
 
 .card-description h2 {
@@ -86,6 +89,14 @@
     }
     .pet-show-description {
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 150px;
+        height: 150px;
+        flex-grow: 1;
+        align-self: center;
+      }
     }
     .pet-detail-footer {
       text-align: center;

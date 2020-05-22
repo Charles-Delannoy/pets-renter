@@ -13,6 +13,7 @@
       <h3> <%= @pet.name.capitalize %> est un <%= @pet.pet_type %>, de la race <%= @pet.race %></h3>
       <h4><%= @pet.description %></h4>
       <p> Vous pouvez profiter de <%= @pet.name.capitalize %> pour <%= @pet.price %> €/jour ! </p>
+    <%= image_tag 'logo.png' %>
     </div>
     <div class="pet-detail-footer">
       <% if policy(@pet).edit? %>
