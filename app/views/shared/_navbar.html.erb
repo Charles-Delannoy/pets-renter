@@ -11,16 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "Accueil", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Create a pet", new_pet_path, class: "nav-link", data: {turbolinks: "false"} %>
+          <%= link_to "Louer mon animal", new_pet_path, class: "nav-link", data: {turbolinks: "false"} %>
         </li>
         <!-- <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li> -->
         <li class="nav-item">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <%= link_to "Deconnexion", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
 
         <li class="nav-item dropdown">
@@ -30,13 +30,13 @@
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Dashboard", bookings_path, class: "dropdown-item" %>
-            <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Mon tableau de bord", bookings_path, class: "dropdown-item" %>
+            <%= link_to "Editer mon profil", edit_user_registration_path, class: "dropdown-item" %>
           </div>
         </li>
       </ul>
     </div>
     <% else %>
-       <%= link_to "Sign in", new_user_session_path, class: "my-btn btn-sign-in-navbar" %>
+       <%= link_to "Me connecter", new_user_session_path, class: "my-btn btn-sign-in-navbar" %>
     <% end %>
 </div>
