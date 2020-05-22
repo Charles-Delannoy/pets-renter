@@ -12,5 +12,11 @@
   }
   .search-btn {
     border-radius: 0px 5px 5px 0px;
+    color: white;
+    background-color: $primary-color;
+    border: 1px solid white;
+      &:hover{
+    color: #582630;
+  }
   }
 }
