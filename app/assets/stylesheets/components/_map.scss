@@ -8,10 +8,20 @@
   border: 0.5px solid #F4B8B7;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   font-family: 'Open Sans', sans-serif;
-  h2, i {
+    i {
     color: $btn-color;
   }
 }
+
+.mapboxgl-popup-content a {
+  color: $btn-color;
+  opacity: 0.7;
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
 
 .map-container {
   height: 100vh;
