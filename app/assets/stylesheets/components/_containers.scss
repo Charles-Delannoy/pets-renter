@@ -32,6 +32,10 @@
   width: 30%;
 }
 
-.container-my-bookings .container-booked-pets {
+.container-my-bookings {
+  overflow: auto;
+}
+
+.container-booked-pets {
   overflow: auto;
 }
