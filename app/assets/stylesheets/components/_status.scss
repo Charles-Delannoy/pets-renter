@@ -1,0 +1,14 @@
+.refused {
+  color: $btn-color;
+  margin-bottom: 5px;
+}
+
+.accepted {
+  color: $green;
+  margin-bottom: 5px;
+}
+
+.pending {
+  color: $secondary-color;
+  padding-bottom: 5px;
+}
