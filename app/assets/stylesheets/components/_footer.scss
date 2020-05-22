@@ -4,10 +4,8 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
+  padding: 0px 16px;
   color: $btn-color;
-  position: fixed;
-  bottom: 0;
   width: 100%
 }
 
@@ -21,7 +19,7 @@
   opacity: 0.6;
   text-decoration: none;
   font-size: 24px;
-  padding: 0px 10px;
+  padding-right: 10px;
 }
 
 .footer-links a:hover {
