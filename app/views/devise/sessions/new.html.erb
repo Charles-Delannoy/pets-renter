@@ -1,5 +1,5 @@
 
-<h2>Log in or Create an account to start find your dream pet !</h2>
+<h2>Connectez vous ou créer un compte pour commencer!</h2>
 
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -13,7 +13,7 @@
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   <div class="form-actions btn-container">
-    <%= f.button :submit, "Log in", class: "btn-submit-pet" %>
+    <%= f.button :submit, "Je me connecte", class: "btn-submit-pet" %>
   </div>
   </div>
 

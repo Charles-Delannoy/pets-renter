@@ -2,13 +2,13 @@
   <%= text_field_tag :query,
     params[:query],
     class: "search-field",
-    placeholder: "Search by name OR type (chien, chat, etc.)"
+    placeholder: "Rechercher par nom OU type d'animal (chien, chat, etc.)"
   %>
-  <%= submit_tag "Search", class: "my-btn search-btn", data: {turbolinks: "false"} %>
+  <%= submit_tag "Chercher!", class: "my-btn search-btn", data: {turbolinks: "false"} %>
 <% end %>
 
 <div class="section-title">
-  <h1>Pets</h1>
+  <h1>Tous les animaux</h1>
 </div>
 
   <div class="wrapper">
@@ -26,12 +26,12 @@
               <div class="card-description-details">
                 <p><%= pet.pet_type %></p>
                 <p><%= pet.race %></p>
-                <strong><p><%= pet.price %> $/day </p></strong>
+                <strong><p><%= pet.price %> €/jour </p></strong>
               </div>
               <div class="card-pet-foot">
                 <%= link_to "Details", pet_path(pet), class: "my-btn btn-card" %>
                 <% unless current_user == pet.user %>
-                <%= link_to "Book", new_pet_booking_path(pet), class: "my-btn btn-card", data: {turbolinks: "false"} %>
+                <%= link_to "Réserver", new_pet_booking_path(pet), class: "my-btn btn-card", data: {turbolinks: "false"} %>
                 <% end %>
               </div>
             </div>

@@ -1,9 +1,9 @@
 <div class="section-title">
-<h1>My bookings</h1>
+<h1>Mes réservations</h1>
 </div>
 
 <div class="cards-container d-flex">
-  <p><%= "No booking yet" if @bookings.empty? %></p>
+  <p><%= "Vous n'avez pas encore effectué de réservations" if @bookings.empty? %></p>
   <% @bookings.each do |booking| %>
   <div class="card-booking">
   <div class="card-booking-img">
@@ -17,14 +17,16 @@
       <h5><strong><%= link_to booking.pet.name, pet_path(booking.pet), class: "show-from-dashboard"%></strong></h5>
     </div>
       <div class="card-text-booking">
-        <p>You have made a reservation for a <%= booking.pet.pet_type %>, more precisely a <%= booking.pet.race %></p>
+        <p> Vous avez effectué une réservation pour un <%= booking.pet.pet_type %>, plus précisemment un <%= booking.pet.race %></p>
       </div>
       <div class="card-details-booking">
-        <p>From: <%= booking.start_date %> To: <%= booking.end_date %> - <%= booking.days %> days</p>
-        <p><strong><%= booking.price %>$</strong></p>
-        <p class="<%= booking.accepted %>"> Status: <%= booking.accepted.capitalize %></p>
+
+        <p>Du: <%= booking.start_date %> Au: <%= booking.end_date %> - <%= booking.days %> jours</p>
+        <p><strong><%= booking.price %>€</strong></p>
+        <p class="<%= booking.accepted %>"> Statut: <%= booking.accepted.capitalize %></p>
+
         <div class="booking-button">
-          <%= link_to "Cancel booking", pet_booking_path(booking.pet, booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }, class: "my-btn btn-card" %>
+          <%= link_to "Annuler ma réservation", pet_booking_path(booking.pet, booking), method: :delete, data: { confirm: "Etes vous sur de vouloir supprimer cette réservation?" }, class: "my-btn btn-card" %>
         </div>
       </div>
     </div>
@@ -32,11 +34,11 @@
 </div>
 
 <div class="section-title">
-<h1>My booked pets</h1>
+<h1>Mes animaux réservés</h1>
 </div>
 
 <div class="cards-container d-flex">
-  <p><%= "No pets booked yet" if @booked.empty? %></p>
+  <p><%= "Vous n'avez pas encore d'animaux loués" if @booked.empty? %></p>
   <% @booked.each do |booking| %>
   <div class="card-booking">
   <div class="card-booking-img">
@@ -50,23 +52,24 @@
       <h5><strong><%= booking.pet.name %></strong></h5>
     </div>
       <div class="card-text-booking">
-        <p>A reservation has been made for your <%= booking.pet.pet_type %>, the <%= booking.pet.race %></p>
+        <p>Une demande de réservation a été effectuée pour votre <%= booking.pet.pet_type %>, le <%= booking.pet.race %></p>
       </div>
       <div class="card-details-booking">
-        <p>From: <%= booking.start_date %> To: <%= booking.end_date %> - <%= booking.days %> days</p>
-        <p><strong><%= booking.price %>$</strong></p>
-        <p class="<%= booking.accepted %>"> Status: <%= booking.accepted.capitalize %></p>
+
+        <p>Du: <%= booking.start_date %> Au: <%= booking.end_date %> - <%= booking.days %> jours</p>
+        <p><strong><%= booking.price %>€</strong></p>
+        <p class="<%= booking.accepted %>"> Statut: <%= booking.accepted.capitalize %></p>
         <div class="booking-validation-form">
           <%= simple_form_for [booking] do |f| %>
           <%= f.hidden_field :accepted, value: "accepted" %>
           <%= f.hidden_field :id, value: booking.id %>
-          <%= f.submit 'Accept', class: "my-btn btn-card booking-validation-btn"%>
+          <%= f.submit 'Accepter', class: "my-btn btn-card booking-validation-btn"%>
           <% end %>
 
           <%= simple_form_for [booking] do |f| %>
           <%= f.hidden_field :accepted, value: "refused" %>
           <%= f.hidden_field :id, value: booking.id %>
-          <%= f.submit 'Refuse', class: "my-btn btn-card booking-validation-btn"%>
+          <%= f.submit 'Refuser', class: "my-btn btn-card booking-validation-btn"%>
           <% end %>
         </div>
       </div>
