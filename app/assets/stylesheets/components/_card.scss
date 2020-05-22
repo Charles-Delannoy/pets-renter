@@ -102,7 +102,7 @@
   margin-top: 30px;
   .home-card-img {
     height: 100%;
-    width: 400px;
+    width: 100%;
     object-fit: cover;
   }
 }
@@ -116,6 +116,7 @@
 .card-text {
   color: $gray;
   padding: 50px;
+  text-align: center;
 }
 
 // CARD FOR BOOKING RESERVATION

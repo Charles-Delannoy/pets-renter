@@ -1,13 +1,13 @@
 <%= simple_form_for [@pet], html: { class: "form-class"} do |f| %>
-<%= f.input :name %>
+<%= f.input :name, label: "Nom" %>
 <%= f.input :description %>
-<%= f.input :birthdate,  as: :string, start_year: Date.today.year - 20, end_year: Date.today.year, input_html: {class: "datepicker"} %>
-<%= f.input :address %>
-<%= f.input :pet_type %>
+<%= f.input :birthdate,  as: :string, start_year: Date.today.year - 20, end_year: Date.today.year, input_html: {class: "datepicker"}, label: "Date de naissance" %>
+<%= f.input :address, label: "Addresse" %>
+<%= f.input :pet_type, label: "Type d'animal" %>
 <%= f.input :race %>
-<%= f.input :price, label: "Price per day", input_html: {min: 0, step: 5} %>
+<%= f.input :price, label: "Prix par jour", input_html: {min: 0, step: 5} %>
 <%= f.input :photo, as: :file %>
 <div class="btn-container">
-<%= f.submit class: "my-btn btn-submit-pet" %>
+<%= f.submit "Ajouter mon animal", class: "my-btn btn-submit-pet"  %>
 </div>
 <% end %>

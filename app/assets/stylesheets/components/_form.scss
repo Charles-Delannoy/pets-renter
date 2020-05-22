@@ -6,6 +6,9 @@
   box-shadow: 0 0 5px rgb(230,230,230);
   margin: auto;
   color: #daa3a2;
+  label {
+    color: $btn-color;
+  }
 }
 
 
