@@ -1,5 +1,9 @@
 // CARD FOR INDEX PAGE
 
+.price-card {
+  color: $btn-color;
+}
+
 .card-pet {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -39,7 +43,7 @@
 
 .card-description h2 {
   font-size: 24px;
-  color: #F4B8B7;
+  color: $btn-color;
   padding: .55em 0 .3em;
   border-bottom: 1px solid #d8d8d8;
   text-align: center;
@@ -77,6 +81,8 @@
       text-align: center;
       border-bottom: 2px solid white;
       margin: 20px;
+      color: $orange;
+      padding-bottom: 8px;
     }
     .pet-show-description {
       padding: 20px;
