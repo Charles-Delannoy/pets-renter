@@ -1,9 +1,11 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -15,7 +17,14 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // }
 // $my-font: "Font Name";
 .section-title {
-    border-bottom: 0.1px solid #d8d8d8;
+    border-bottom: 0.1px solid #e4827a;
     width: 100%;
     margin-bottom: 15px;
+    h1 {
+      color: #E2574C;
+      margin-top: 30px;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 50px;
+      letter-spacing: 3px;
+    }
 }

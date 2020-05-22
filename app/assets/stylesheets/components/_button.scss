@@ -18,11 +18,13 @@
 
 .btn-pet-show {
   background-color: $orange;
+  opacity: 0.7;
   color: white;
   border-radius: 5px;
   margin: 0 20px;
   &:hover {
-    background-color: #b5631a;
+    opacity: 1;
+    color: white;
   }
 }
 
@@ -31,7 +33,18 @@
   border: 2px solid $primary-color;
   border-radius: 8px;
   &:hover {
-    color: #582630
+    color: $btn-color;
+    border: 2px solid $btn-color;
+  }
+}
+
+.btn-card-book {
+  color: #128a54;
+  border: 2px solid #128a54;
+  border-radius: 8px;
+  &:hover {
+    color: $green;
+    border: 2px solid $green;
   }
 }
 
