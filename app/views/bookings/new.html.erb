@@ -1,7 +1,7 @@
-<h1>booking</h1>
+<h1>Réserver votre animal</h1>
 <%= simple_form_for [@pet, @booking] do |f| %>
-<%= f.input :start_date, as: :string, start_year: Date.today.year, input_html: {id: "start"} %>
-<%= f.input :end_date, as: :string, input_html: {id: "end"} %>
-<%= f.submit class: "btn btn-primary" %>
+<%= f.input :start_date, as: :string, start_year: Date.today.year, input_html: {id: "start"}, label: "Date de début" %>
+<%= f.input :end_date, as: :string, input_html: {id: "end"}, label: "Date de fin" %>
+<%= f.submit "Je réserve", class: "btn btn-primary" %>
 <% end %>
 
