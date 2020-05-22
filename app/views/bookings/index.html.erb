@@ -20,9 +20,11 @@
         <p> Vous avez effectué une réservation pour un <%= booking.pet.pet_type %>, plus précisemment un <%= booking.pet.race %></p>
       </div>
       <div class="card-details-booking">
+
         <p>Du: <%= booking.start_date %> Au: <%= booking.end_date %> - <%= booking.days %> jours</p>
         <p><strong><%= booking.price %>€</strong></p>
-        <p> Statut: <%= booking.accepted.capitalize %></p>
+        <p class="<%= booking.accepted %>"> Statut: <%= booking.accepted.capitalize %></p>
+
         <div class="booking-button">
           <%= link_to "Annuler ma réservation", pet_booking_path(booking.pet, booking), method: :delete, data: { confirm: "Etes vous sur de vouloir supprimer cette réservation?" }, class: "my-btn btn-card" %>
         </div>
@@ -53,9 +55,10 @@
         <p>Une demande de réservation a été effectuée pour votre <%= booking.pet.pet_type %>, le <%= booking.pet.race %></p>
       </div>
       <div class="card-details-booking">
+
         <p>Du: <%= booking.start_date %> Au: <%= booking.end_date %> - <%= booking.days %> jours</p>
         <p><strong><%= booking.price %>€</strong></p>
-        <p> Statut: <%= booking.accepted.capitalize %></p>
+        <p class="<%= booking.accepted %>"> Statut: <%= booking.accepted.capitalize %></p>
         <div class="booking-validation-form">
           <%= simple_form_for [booking] do |f| %>
           <%= f.hidden_field :accepted, value: "accepted" %>
