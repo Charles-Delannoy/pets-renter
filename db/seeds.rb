@@ -19,7 +19,7 @@ types = ["Chien", "Chat"]
 races_chien = ["labrador", "golden retriever", "bouvier", "bouledog"]
 races_chat = ["bengal", "burmilla", "korat", "munchkin"]
 noms = ["Riesling", "Tigger", "Max", "Charlie", "Rox", "Roukie", "Oliver", "Oreo", "Fluffy", "Jake", "Nurmi", "Bourgueil", "Catty", "Steve", "Leo"]
-
+addresses = ["3 rue guynemer, Saint-Mandé", "16 villa gaudelet, Paris", "27 rue au pain, Saint-germain-en-laye", "14, Rue Chanoinesse, Paris 75004", "12 Avenue Beaucour, Paris"]
 
 i = 1
 j = 1
@@ -46,9 +46,9 @@ j = 1
     pet_img = URI.open(pet_url)
     nom = noms.sample
     birth = "2019-05-20"
-    address = "3 rue guynemer, Paris"
+    address = addresses.sample
     descr = "C'est un #{type} de race #{race} super mignon. Parfait pour chopper ;)"
-    @pet = Pet.new(name: nom, description: descr, birthdate: birth, pet_type: type, race: race, address: address)
+    @pet = Pet.new(name: nom, description: descr, birthdate: birth, pet_type: type, race: race, address: address, price: rand(9..22))
     @pet.user = @user
     @pet.photo.attach(io: pet_img, filename: "#{nom}#{j}.png", content_type: 'image/png')
     @pet.save
