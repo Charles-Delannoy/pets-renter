@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     authorize @booking
     @booking.accepted = "pending"
-    @booking.save ? (redirect_to pet_path(@pet)) : (render :new)
+    @booking.save ? (redirect_to bookings_path(@pet)) : (render :new)
     flash[:notice] = "You have successfully booked a pet"
   end
 
