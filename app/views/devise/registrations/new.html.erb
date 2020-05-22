@@ -3,7 +3,7 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-class">
     <%= f.input :first_name, required: true %>
     <%= f.input :last_name, required: true %>
     <%= f.input :email,
@@ -18,11 +18,11 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :photo, as: :file %>
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: "btn-submit-pet" %>
+  </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>

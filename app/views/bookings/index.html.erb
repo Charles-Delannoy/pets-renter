@@ -14,7 +14,7 @@
       <% end %>
   </div>
     <div class="card-title-booking">
-      <h5><strong><%= booking.pet.name %></strong></h5>
+      <h5><strong><%= link_to booking.pet.name, pet_path(booking.pet), class: "show-from-dashboard"%></strong></h5>
     </div>
       <div class="card-text-booking">
         <p>You have made a reservation for a <%= booking.pet.pet_type %>, more precisely a <%= booking.pet.race %></p>

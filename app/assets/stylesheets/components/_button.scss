@@ -68,3 +68,22 @@
   display: flex;
   justify-content: center;
 }
+
+// LIEN VERS SHOW DEPUIS LE DAHSBOARD
+
+.show-from-dashboard {
+  color: black;
+  &:hover {
+    color: $green;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
+
+
+
