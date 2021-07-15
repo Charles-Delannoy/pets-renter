@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :destroy]
   end
   resources :bookings, only: [:index, :update]
+  get '/users/:id', to: 'profiles#show'
 end

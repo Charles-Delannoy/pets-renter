@@ -5,8 +5,8 @@ class PetsController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "name ILIKE :query OR pet_type ILIKE :query OR address ILIKE :query"
-      @pets = policy_scope(Pet).where(sql_query, query: "%#{params[:query]}%").geocoded
+      sql_query = "name ILIKE :query OR pet_type ILIKE '#{params[:query]}' OR address ILIKE '#{params[:query]}'"
+      @pets = policy_scope(Pet).where(sql_query, query: params[:query]).geocoded
     else
       @pets = policy_scope(Pet).geocoded
     end
