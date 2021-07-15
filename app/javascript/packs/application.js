@@ -29,10 +29,13 @@ import "../plugins/flatpickr"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 
 document.addEventListener('turbolinks:load', () => {
-initMapbox();
+  initMapbox();
+  console.log("coucou");
+  initAutocomplete();
   // Call your functions here, e.g:
   // initSelect2();
 });

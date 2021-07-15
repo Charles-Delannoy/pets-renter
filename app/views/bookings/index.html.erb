@@ -65,17 +65,12 @@
         <p><strong><%= booking.price %>€</strong></p>
         <p class="<%= booking.accepted %>"> Statut: <%= booking.accepted.capitalize %></p>
         <div class="booking-validation-form">
-          <%= simple_form_for [booking] do |f| %>
-          <%= f.hidden_field :accepted, value: "accepted" %>
-          <%= f.hidden_field :id, value: booking.id %>
-          <%= f.submit 'Accepter', class: "my-btn btn-card booking-validation-btn"%>
-          <% end %>
 
-          <%= simple_form_for [booking] do |f| %>
-          <%= f.hidden_field :accepted, value: "refused" %>
-          <%= f.hidden_field :id, value: booking.id %>
-          <%= f.submit 'Refuser', class: "my-btn btn-card booking-validation-btn"%>
-          <% end %>
+
+          <%= link_to 'Accepter', accept_booking_path(booking), method: :patch, class: "my-btn btn-card booking-validation-btn" %>
+          <%= link_to 'Refuser', refuse_booking_path(booking), method: :patch, class: "my-btn btn-card booking-validation-btn" %>
+
+
         </div>
       </div>
     </div>

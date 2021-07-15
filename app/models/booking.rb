@@ -12,6 +12,14 @@ class Booking < ApplicationRecord
     self.price = days * pet.price
   end
 
+  def accept
+    self.accepted = "accepted"
+  end
+
+  def refuse
+    self.accepted = "refused"
+  end
+
   # def check_date
   #   if self.start_date < Date.today
   #     errors.add(:start_date, "can't be in the past")

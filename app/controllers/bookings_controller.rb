@@ -1,6 +1,7 @@
 require 'date'
 
 class BookingsController < ApplicationController
+  before_action :set_booking, only: [:accept, :refuse]
 
   def index
     @bookings = current_user.bookings.order(created_at: :desc)
@@ -26,11 +27,14 @@ class BookingsController < ApplicationController
     flash[:notice] = "You have successfully booked a pet"
   end
 
-  def update
-    @booking = Booking.find(booking_params[:id])
-    authorize @booking
-    @booking.accepted = booking_params[:accepted]
-    @booking.save ? (redirect_to bookings_path) : (render :new)
+  def accept
+    @booking.accept
+    save_booking
+  end
+
+  def refuse
+    @booking.refuse
+    save_booking
   end
 
   def destroy
@@ -41,6 +45,15 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def save_booking
+    @booking.save ? (redirect_to bookings_path) : (render :new)
+  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :id, :accepted)
