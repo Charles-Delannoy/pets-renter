@@ -12,5 +12,4 @@ const initAutocomplete = () => {
   addAutocompleteTo('pet_address');
 };
 
-
 export { initAutocomplete };

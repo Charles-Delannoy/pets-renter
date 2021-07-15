@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     patch :accept, on: :member
     patch :refuse, on: :member
   end
+
+  get '/users/:id', to: 'profiles#show'
 end

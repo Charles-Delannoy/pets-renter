@@ -34,7 +34,6 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  console.log("coucou");
   initAutocomplete();
   // Call your functions here, e.g:
   // initSelect2();
